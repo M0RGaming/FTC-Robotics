@@ -5,18 +5,20 @@
 package org.firstinspires.ftc.teamcode.team510nm;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 /**
  * This is NOT an opmode.
  *
  */
-public class Robot510nm {
+class Robot510nm {
     /* Public OpMode members. */
     DcMotor leftDriveB = null;
     DcMotor rightDriveB = null;
     DcMotor leftDriveF = null;
     DcMotor rightDriveF = null;
+    DcMotor hook = null;
 
 
 
@@ -41,6 +43,7 @@ public class Robot510nm {
         rightDriveF = hwMap.get(DcMotor.class, "rdf");
         leftDriveB  = hwMap.get(DcMotor.class, "ldb");
         rightDriveB = hwMap.get(DcMotor.class, "rdb");
+        hook = hwMap.get(DcMotor.class, "hook");
 
 
 
@@ -48,8 +51,9 @@ public class Robot510nm {
         leftDriveF.setDirection(DcMotor.Direction.REVERSE);
         rightDriveB.setDirection(DcMotor.Direction.FORWARD);
         rightDriveF.setDirection(DcMotor.Direction.FORWARD);
+        hook.setDirection(DcMotor.Direction.FORWARD);
 
-
+        hook.setPower(0);
         setAllWheelPower(0);
 
 

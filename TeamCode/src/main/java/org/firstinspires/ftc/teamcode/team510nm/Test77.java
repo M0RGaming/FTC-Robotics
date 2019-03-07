@@ -47,8 +47,11 @@ public class Test77 extends LinearOpMode {
             // leftPower  = -gamepad1.left_stick_y ; // y axis is flipped
             // rightPower = -gamepad1.right_stick_y ; // y axis is flipped
 
+            double liftpower;
+            liftpower = -gamepad2.left_stick_y;
 
 
+            robot.hook.setPower(liftpower);
             robot.leftDriveF.setPower(leftPower);
             robot.rightDriveF.setPower(rightPower);
             robot.leftDriveB.setPower(leftPower);
