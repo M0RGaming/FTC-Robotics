@@ -20,6 +20,8 @@ class Robot510nm {
     DcMotor rightDriveF = null;
     DcMotor hook = null;
 
+    Sensors510nm sensors = new Sensors510nm();
+
 
 
     // Use the following as a preliminary measure (in theory it should work, but loss of grip exists)
@@ -45,12 +47,16 @@ class Robot510nm {
         rightDriveB = hwMap.get(DcMotor.class, "rdb");
         hook = hwMap.get(DcMotor.class, "hook");
 
+        sensors.init(hwMap);
 
 
-        leftDriveB.setDirection(DcMotor.Direction.REVERSE);
-        leftDriveF.setDirection(DcMotor.Direction.REVERSE);
-        rightDriveB.setDirection(DcMotor.Direction.FORWARD);
-        rightDriveF.setDirection(DcMotor.Direction.FORWARD);
+
+
+
+        leftDriveB.setDirection(DcMotor.Direction.FORWARD);
+        leftDriveF.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveB.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveF.setDirection(DcMotor.Direction.REVERSE);
         hook.setDirection(DcMotor.Direction.FORWARD);
 
         hook.setPower(0);

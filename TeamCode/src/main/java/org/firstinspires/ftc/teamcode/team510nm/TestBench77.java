@@ -8,8 +8,8 @@ import com.qualcomm.robotcore.util.Range;
 
 
 
-@TeleOp(name="Test 77", group="Team 510nm")
-public class Test77 extends LinearOpMode {
+@TeleOp(name="Test Bench 77", group="Team 510nm")
+public class TestBench77 extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -30,7 +30,6 @@ public class Test77 extends LinearOpMode {
         runtime.reset();
 
         while (opModeIsActive()) {
-
 
             double leftPower;
             double rightPower;
@@ -70,9 +69,9 @@ public class Test77 extends LinearOpMode {
             robot.leftDriveB.setPower(leftPower);
             robot.rightDriveB.setPower(rightPower);
 
-            // Show the elapsed game time and wheel power.
-            telemetry.addData("Status", "Run Time: " + runtime.toString());
-            telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+            telemetry.addData("Raw",    robot.sensors.ods.getRawLightDetected());
+            telemetry.addData("Normal", robot.sensors.ods.getLightDetected());
+
             telemetry.update();
         }
     }
