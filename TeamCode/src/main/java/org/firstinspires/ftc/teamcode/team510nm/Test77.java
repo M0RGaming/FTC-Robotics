@@ -49,8 +49,8 @@ public class Test77 extends LinearOpMode {
             // leftPower  = -gamepad1.left_stick_y ; // y axis is flipped
             // rightPower = -gamepad1.right_stick_y ; // y axis is flipped
 
-            double liftPower;
-            liftPower = -gamepad2.left_stick_y;
+            //double liftPower;
+            //liftPower = -gamepad2.left_stick_y;
 
 
 
@@ -58,8 +58,15 @@ public class Test77 extends LinearOpMode {
                 leftPower = 0;
             } else if (rightPower < 0.01 && rightPower > -0.01) {
                 rightPower = 0;
-            } else if (liftPower < 0.01 && liftPower > -0.01) {
-                liftPower = 0;
+            } //else if (liftPower < 0.01 && liftPower > -0.01) {
+               // liftPower = 0;
+            //}
+
+            double liftPower = 0;
+            if (gamepad1.dpad_up) {
+                liftPower = 1;
+            } else if (gamepad1.dpad_down) {
+                liftPower = -1;
             }
 
 

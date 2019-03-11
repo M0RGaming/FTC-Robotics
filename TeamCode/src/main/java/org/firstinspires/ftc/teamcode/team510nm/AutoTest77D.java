@@ -3,16 +3,16 @@
 package org.firstinspires.ftc.teamcode.team510nm;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-//import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+//import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 
-@Autonomous(name="Auto Test 77", group="Team 510nm")
+@Autonomous(name="Auto Test 77D", group="Team 510nm")
 //@Disabled
-public class AutoTest77 extends LinearOpMode {
+public class AutoTest77D extends LinearOpMode {
 
     private Robot510nm robot = new Robot510nm();   // Use Robots hardware
     private ElapsedTime runtime = new ElapsedTime();
@@ -95,7 +95,7 @@ public class AutoTest77 extends LinearOpMode {
         turn(0.8,90,2);
         encoderDrive(0.8,4,4,2);
 
-        boolean crater = detectCrater();
+        boolean crater = false;
         if (crater) {
             encoderDrive(1,72,72,7);
             turn(0.8,180,3);
